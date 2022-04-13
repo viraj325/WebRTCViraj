@@ -54,14 +54,9 @@ let localStream = null;
 let remoteStream = null;
 
 // HTML elements
-// const webcamButton = document.getElementById('webcamButton');
 const webcamVideo = document.getElementById('webcamVideo');
-// const callButton = document.getElementById('callButton');
-// const callInput = document.getElementById('callInput');
-// const answerButton = document.getElementById('answerButton');
 const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
-const meeting_url = document.getElementById('video_call_link');
 
 /*if (c === "new") {
     hangupButton.style.display = "none";
@@ -156,7 +151,7 @@ const createEvent = async () => {
   
     hangupButton.disabled = false;
 
-    meeting_url.textContent = "https://cople.app/VirajRTC/index.html?virajRTCID=" + meetID
+    // meeting_url.textContent = "https://cople.app/VirajRTC/index.html?virajRTCID=" + meetID
     copyTextToClipboard("https://cople.app/VirajRTC/index.html?virajRTCID=" + meetID)
 };
   
