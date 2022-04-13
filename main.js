@@ -157,6 +157,7 @@ const createEvent = async () => {
     hangupButton.disabled = false;
 
     meeting_url.textContent = "https://cople.app/VirajRTC/index.html?virajRTCID=" + meetID
+    copyTextToClipboard("https://cople.app/VirajRTC/index.html?virajRTCID=" + meetID)
 };
   
 // 1. Setup media sources
@@ -204,3 +205,18 @@ hangupButton.onclick = async () => {
 window.addEventListener("beforeunload", function(e) {
     deleteFirestoreDocument();
  }, false);
+
+// copy to the clipboard
+function copyTextToClipboard(text) {
+    if (!navigator.clipboard) {
+        console.log("Failed to copy to the clipboard")
+        //show it as a popup
+        return;
+    }
+
+    navigator.clipboard.writeText(text).then(function() {
+        console.log('Async: Copying to clipboard was successful!');
+    }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+    });
+}
