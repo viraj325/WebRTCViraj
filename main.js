@@ -57,6 +57,8 @@ let remoteStream = null;
 const webcamVideo = document.getElementById('webcamVideo');
 const remoteVideo = document.getElementById('remoteVideo');
 const hangupButton = document.getElementById('hangupButton');
+const popupBox = document.getElementById('popup_box');
+const popupText = document.getElementById('popup_text');
 
 /*if (c === "new") {
     hangupButton.style.display = "none";
@@ -152,6 +154,7 @@ const createEvent = async () => {
     hangupButton.disabled = false;
 
     // meeting_url.textContent = "https://cople.app/VirajRTC/index.html?virajRTCID=" + meetID
+    popupText.textContent = "https://cople.app/VirajRTC/index.html?virajRTCID=" + meetID
     copyTextToClipboard("https://cople.app/VirajRTC/index.html?virajRTCID=" + meetID)
 };
   
@@ -199,8 +202,9 @@ hangupButton.onclick = async () => {
 
 window.addEventListener("beforeunload", function(e) {
     deleteFirestoreDocument();
- }, false);
+}, false);
 
+// most likely won't need this
 // copy to the clipboard
 function copyTextToClipboard(text) {
     if (!navigator.clipboard) {

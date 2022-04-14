@@ -67,12 +67,11 @@ html, body {
   }
   
   .newUser {
-    width: 150px;
-    height: 225px;
+    width: 100px;
+    height: 175px;
     object-fit: cover;
     border-radius: 20px;
     margin: 30px;
-    bottom: 0;
     right: 0;
     position: absolute;
   }
