@@ -27,7 +27,7 @@ const firebaseConfig = {
     appId: "1:867739477372:web:977adbcb6fad893657b0f9"
 };
 
-var c = location.search.split('virajRTCID=')[1]
+var c = location.search.split('ID=')[1]
 //check if the value is new
 console.log(c);
 
@@ -42,7 +42,7 @@ const firestore = firebase.firestore();
 const servers = {
     iceServers: [
         {
-            urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302', 'stun:openrelay.metered.ca:80'],
+            urls: ['stun:stun1.l.google.com:19302', 'stun:stun2.l.google.com:19302', 'stun:openrelay.metered.ca:80']
         },
         {
             urls: "turn:openrelay.metered.ca:80",
@@ -85,7 +85,7 @@ const servers = {
             username: 'webrtc'
         }
     ],
-    iceCandidatePoolSize: 10,
+    iceCandidatePoolSize: 11,
 };
   
 // Global State
